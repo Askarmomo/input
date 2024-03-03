@@ -9,39 +9,44 @@
   <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 
-<body class="bg-black">
+<body class="bg-indigo-900">
 
-<div>
-  <form  id="form" class="mx-auto max-w-lg  bg-indigo-950 px-5 py-8 mt-52 rounded">
-    <div>
-      <input id="name" type="name" name="name" placeholder="Enter your name" class="w-full p-2 rounded outline-none mb-4" required>
-    </div>
-    <div>
-      <input id="number" type="number" name="number" placeholder="Enter your number" class="w-full p-2 rounded outline-none mb-4">
-    </div>
-    <div>
-      <input id="date" type="date" name="date" placeholder="Enter your date" class="w-full p-2 rounded outline-none mb-4">
-    </div>
-    <div>
-      <input id="address" type="address" name="address" placeholder="Enter your address" class="w-full p-2 rounded outline-none mb-4">
-    </div>
-    <div>
+  <div>
+    <form id="form" class="mx-auto max-w-lg  bg-indigo-950 px-5 py-8 mt-52 rounded space-y-4">
       <div>
-      <button id="Submitbtn" class="w-full p-2 rounded outline-none text-white font-semibold bg-indigo-600">Submit</button>
-    </div>
-  </form>
-</div>
+        <input id="name" type="name" name="name" placeholder="Enter your name"
+          class="w-full p-2 rounded outline-none mb-4" required>
+      </div>
+      <div>
+        <input id="number" type="number" name="number" placeholder="Enter your number"
+          class="w-full p-2 rounded outline-none mb-4">
+      </div>
+      <div>
+        <input id="date" type="date" name="date" placeholder="Enter your date"
+          class="w-full p-2 rounded outline-none mb-4">
+      </div>
+      <div>
+        <input id="address" type="address" name="address" placeholder="Enter your address"
+          class="w-full p-2 rounded outline-none mb-4">
+      </div>
+      <div>
+        <div>
+          <button id="Submitbtn"
+            class="w-full p-2 rounded outline-none text-white font-semibold bg-indigo-600 hover:bg-indigo-800">Submit</button>
+        </div>
+    </form>
+  </div>
 
-<div class="pt-10 max-w-lg mx-auto">
-  <table  class="text-white border w-full" id="table">
-    <tr class="text-white border">
-      <th class="text-white border">Name</th>
-      <th class="text-white border">Number</th>
-      <th class="text-white border">Date</th>
-      <th class="text-white border">Address</th>
-    </tr>
-  </table>
-</div>
+  <div class="pt-10 max-w-4xl mx-auto">
+    <table class="text-white border w-full text-center" id="table">
+      <tr class="text-white border">
+        <th class="text-white border p-2">Name</th>
+        <th class="text-white border p-2">Number</th>
+        <th class="text-white border p-2">Date</th>
+        <th class="text-white border p-2">Address</th>
+      </tr>
+    </table>
+  </div>
 
   <script type="module" src="./assets/js/index.js"></script>
 </body>

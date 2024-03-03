@@ -58,28 +58,8 @@ validate.addField(addressEl, [
         value: 15,
     }
 ])
+
 validate.onSuccess(() => {
-
-
-
-
-
-    SubmitbtnEl.addEventListener("click", (event) => {
-
-        event.preventDefault()
-        const tr = document.createElement("tr")
-        tr.classList = "text-white border text-center"
-
-        tr.innerHTML = `
-        <tr class="text-white border text-center">
-        <td class="text-white border text-center">${nameEl.value}</td>
-        <td class="text-white border text-center">${numberEl.value}</td>
-        <td class="text-white border text-center">${dateEl.value}</td>
-        <td class="text-white border text-center">${addressEl.value}</td>
-        </tr>`
-        tableEL.append(tr)
-
-    })
 
     const formdata = new FormData(formEl)
     const formvalueobject = Object.fromEntries(formdata.entries())
@@ -98,8 +78,35 @@ validate.onSuccess(() => {
     } else {
 
         array.push(formvalueobject)
-        localStorage.setItem("key",JSON.stringify(array))
+        localStorage.setItem("key", JSON.stringify(array))
     }
+
+    formEl.reset()
+
 
 })
 
+function getAllCorierData() {
+    // get all stored datas which are avilable in localstorage
+    const corierdata = localStorage.getItem("key")
+
+    // display the ui with all those data
+    const corierdataaray = JSON.parse(corierdata)
+
+    // write those values into the table ui
+    const finaldata = corierdataaray.map((corierdata) => {
+
+        return `
+        <tr>
+            <td class="text-white p-2 border ">${corierdata.name}</td>
+            <td class="text-white p-2 border">${corierdata.number}</td>
+            <td class="text-white p-2 border">${corierdata.date}</td>
+            <td class="text-white p-2 border">${corierdata.address}</td>
+        </tr>
+        `
+
+    }).join(" ")
+
+    tableEL.innerHTML += finaldata
+}
+getAllCorierData()
