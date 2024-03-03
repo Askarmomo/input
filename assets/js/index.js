@@ -94,19 +94,35 @@ function getAllCorierData() {
     const corierdataaray = JSON.parse(corierdata)
 
     // write those values into the table ui
-    const finaldata = corierdataaray.map((corierdata) => {
+    const newformvalue = []
+    corierdataaray.map((corierdata) => {
 
-        return `
-        <tr>
-            <td class="text-white p-2 border ">${corierdata.name}</td>
-            <td class="text-white p-2 border">${corierdata.number}</td>
-            <td class="text-white p-2 border">${corierdata.date}</td>
-            <td class="text-white p-2 border">${corierdata.address}</td>
-        </tr>
-        `
+        const trEl = document.createElement("tr")
+        const tdEl1 = document.createElement("td")
+        const tdEl2 = document.createElement("td")
+        const tdEl3 = document.createElement("td")
+        const tdEl4 = document.createElement("td")
 
-    }).join(" ")
+        tdEl1.classList.add("p-2", "border", "text-white")
+        tdEl1.textContent = corierdata.name
 
-    tableEL.innerHTML += finaldata
+        tdEl2.classList.add("p-2", "border", "text-white")
+        tdEl2.textContent = corierdata.number
+
+        tdEl3.classList.add("p-2", "border", "text-white")
+        tdEl3.textContent = corierdata.date
+
+        tdEl4.classList.add("p-2", "border", "text-white")
+        tdEl4.textContent = corierdata.address
+
+        trEl.append(tdEl1, tdEl2, tdEl3, tdEl4)
+        newformvalue.push(trEl)
+
+    })
+
+    newformvalue.forEach((el) => {
+        tableEL.append(el)
+    })
+
 }
 getAllCorierData()
