@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body class="bg-black">
+
+<div>
+  <form  id="form" class="mx-auto max-w-lg  bg-indigo-950 px-5 py-8 mt-52 rounded">
+    <div>
+      <input id="name" type="name" name="name" placeholder="Enter your name" class="w-full p-2 rounded outline-none mb-4" required>
+    </div>
+    <div>
+      <input id="number" type="number" name="number" placeholder="Enter your number" class="w-full p-2 rounded outline-none mb-4">
+    </div>
+    <div>
+      <input id="date" type="date" name="date" placeholder="Enter your date" class="w-full p-2 rounded outline-none mb-4">
+    </div>
+    <div>
+      <input id="address" type="address" name="address" placeholder="Enter your address" class="w-full p-2 rounded outline-none mb-4">
+    </div>
+    <div>
+      <div>
+      <button id="Submitbtn" class="w-full p-2 rounded outline-none text-white font-semibold bg-indigo-600">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div class="pt-10 max-w-lg mx-auto">
+  <table  class="text-white border w-full" id="table">
+    <tr class="text-white border">
+      <th class="text-white border">Name</th>
+      <th class="text-white border">Number</th>
+      <th class="text-white border">Date</th>
+      <th class="text-white border">Address</th>
+    </tr>
+  </table>
+</div>
+
+  <script type="module" src="./assets/js/index.js"></script>
+</body>
+
+</html>
