@@ -1,4 +1,5 @@
 import JustValidate from 'just-validate';
+import { formetMyDate } from "./utility";
 
 const formEl = document.getElementById("form")
 
@@ -107,7 +108,7 @@ function getAllCorierData() {
         tdEl2.textContent = corierdata.number
 
         tdEl3.classList.add("p-2", "border", "text-white")
-        tdEl3.textContent = corierdata.date
+        tdEl3.textContent = formetMyDate(corierdata.date)
 
         tdEl4.classList.add("p-2", "border", "text-white")
         tdEl4.textContent = corierdata.address
@@ -123,3 +124,4 @@ function getAllCorierData() {
 
 }
 getAllCorierData()
+
