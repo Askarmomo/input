@@ -76,13 +76,10 @@ validate.onSuccess(() => {
         localStorage.setItem("key", JSON.stringify(existingdataarray))
 
     } else {
-
-        array.push(formvalueobject)
         localStorage.setItem("key", JSON.stringify(array))
     }
 
     formEl.reset()
-
 
 })
 
