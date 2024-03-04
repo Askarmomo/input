@@ -128,8 +128,8 @@ function getAllCorierData() {
 
         btnEl.classList.add("p-1", "m-2", "text-white", "rounded", "bg-red-700", "hover:bg-red-800", "text-sm", "cursor-pointer")
         btnEl.textContent = "Delete"
-        btnEl.addEventListener("click", () => {
-
+        btnEl.addEventListener("click", (e) => {
+            deleterequest(corierdata)
         })
 
         trEl.append(tdEl1, tdEl2, tdEl3, tdEl4, tdEl5, tdEl6)
@@ -141,8 +141,20 @@ function getAllCorierData() {
         tableEL.append(el)
     })
     const countTableEl = document.getElementById("count-table")
-    console.log(countTableEl);
     countTableEl.textContent = newformvalue.length
 }
+
+function deleterequest(deleterequest) {
+    const confirmation = confirm(`Do you want to delete${deleterequest["name"]}`)
+    if (confirmation) {
+        const exdata = localStorage.getItem("key")
+        const exobj = JSON.parse(exdata)
+        const otherrecord = exobj.filter(request => request.id != deleterequest["id"])
+        localStorage.setItem("key", JSON.stringify(otherrecord))
+        getAllCorierData(cor)
+    }
+}
+
+
 getAllCorierData()
 
